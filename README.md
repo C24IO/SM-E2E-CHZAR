@@ -73,7 +73,7 @@ Download model
 16. check the cloudwartch logs and metrics 
 17. Now talk about the architecutre of inference endpoit 
 18. Then show - https://github.com/aws/sagemaker-containers
-19
+19 watch -n1  ./predict_img_endpoint.py -e sm-e2e-chzar-endpoint - go to sagemaker terminal and execute this to check the status - see if you can do 3 
 
 
 Steps
