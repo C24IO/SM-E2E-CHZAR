@@ -71,6 +71,9 @@ Download model
 14. run inerences gainst personal
 15. run inferences against demo persons
 16. check the cloudwartch logs and metrics 
+17. Now talk about the architecutre of inference endpoit 
+18. Then show - https://github.com/aws/sagemaker-containers
+19
 
 
 Steps
