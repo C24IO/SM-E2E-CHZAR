@@ -11,19 +11,21 @@ Setup
 ------
 
 1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. *Advanced Step* - You may have to stop the Cloud9 instance and resize the EBS volume as the default size is only 8 GB.
+
 2. Copy the repo - `git clone https://github.com/C24IO/SM-E2E-CHZAR.git`
+
 3. Goto AWS S3 Console & create an S3 bucket for the model artefacts. The S3 bucket should be named: ```sagemaker-<region_name>-<account_id>``` where *<region_name>* is the AWS region where the demo is being run and *<account_id>* is the AWS Account ID. Please create this in ```US East (N. Virginia)	us-east-1```. This step is really important for the workshop to work properly.
 
     If you need to create the S3 bucket do so with this AWS CLI command:
 
-    ```
-    aws s3 mb s3://sagemaker-$(aws configure get region)-$(aws sts get-caller-identity --query 'Account' --output text) --region us-east-1
-    ```
+    ```aws s3 mb s3://sagemaker-$(aws configure get region)-$(aws sts get-caller-identity --query 'Account' --output text) --region us-east-1 ```
 
-    
-3. In your Cloud 9 environment 
-    
-    git clone https://github.com/C24IO/SM-E2E-CHZAR.git 
+You can run the aws commands right in the Cloud9 Terminal
+
+4. Goto AWS SageMaker Console & Create an instance - Everything else should be left to default.  *Advanced Step* - Select Accelerated Computing Notebook instance type and do training in your own notebook. Instead of using a pre-trained model for our endpoint (coming later in the workshop).
+
+5. 
+
 
 Lifecycle configurations - put them in 
 
