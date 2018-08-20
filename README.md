@@ -51,7 +51,7 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
 #### Optional - *Advanced Steps* - To train your own model (40+ mins)
 
-[Normal steps resume later in the workshop here](#resume-normal-workshop)
+[Normal steps resume later in the workshop here](# Normal Workshop resumes)
 
 10. Edit the notebook cell to make this notebook your very own - 
 ```python
@@ -86,8 +86,6 @@ conda install -y boto3
 ```
 
 #### Normal Workshop resumes 
-
-# resume-normal-workshop
 
 #### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
 
