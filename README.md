@@ -43,7 +43,7 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
     4. `mkdir data`
     5. `cd data`
     6. `wget -cv http://files.fast.ai/data/dogscats.zip`
-    7. `unzip dogscats.zip` - now you have the data required to run this notebook in `SM-E2E-CHZAR/data/dogscats`
+    7. `unzip dogscats.zip` - now you have the data required to run this notebook in `SM-E2E-CHZAR/data/dogscats` - we use this location in the next steps
     3. Navigate back to the Jupyter notebook and descend into - `SM-E2E-CHZAR`
     4. Open the prebuilt notebook there - `build_train_custom_model.ipynb`
     5. This notebook contains bare-bones code for *Image classification with Convolutional Neural Networks* for the full notebook with comments, helpful code its hosted [here](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson1.ipynb).
@@ -78,6 +78,25 @@ wget -cv http://files.fast.ai/data/dogscats.zip
 unzip dogscats.zip
 
 
+```
+.
+└── dogscats
+    ├── models
+    ├── sample
+    │   ├── train
+    │   │   ├── cats
+    │   │   └── dogs
+    │   └── valid
+    │       ├── cats
+    │       └── dogs
+    ├── test1
+    ├── train
+    │   ├── cats
+    │   └── dogs
+    └── valid
+        ├── cats
+        └── dogs
+```
 
 
 5. Swich over to the notebook - and walk through that - people can execute if they want to execure they can otherwise its just moving on to the model downloads 
