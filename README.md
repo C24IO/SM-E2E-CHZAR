@@ -85,7 +85,8 @@ source activate fastai
 conda install -y boto3
 ```
 
-#### Normal-Workshop-resumes 
+#### Normal Workshop resumes
+#Normal-Workshop-resumes
 
 #### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
 
