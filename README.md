@@ -20,7 +20,7 @@ Setup
 
     ```aws s3 mb s3://sagemaker-$(aws configure get region)-$(aws sts get-caller-identity --query 'Account' --output text) --region us-east-1 ```
 
-You can run the aws commands right in the Cloud9 Terminal
+    You can run the aws commands right in the Cloud9 Terminal
 
 4. We will now prepare to install custom Conda Kernel base on FastAI Library. Goto AWS SageMaker Console & - please create a new LifeCycle Configuration. Goto "Lifecycle configurations" in the SageMaker Dashboard. And "Create configuration".
 
