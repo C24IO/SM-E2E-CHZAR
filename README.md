@@ -84,23 +84,6 @@ conda install -y boto3
 ```
 
 
-(fastai) sh-4.2$ pwd
-/home/ec2-user/SageMaker/SM-E2E-CHZAR
-(fastai) sh-4.2$ mv ../fastai/fastai .
-(fastai) sh-4.2$
-
-
-Get the data - 
-
-
-mkdir data
-cd data
-http://files.fast.ai/data/dogscats.zip
-wget -cv http://files.fast.ai/data/dogscats.zip
-unzip dogscats.zip
-
-
-```
 .
 └── dogscats
     ├── models
@@ -139,12 +122,6 @@ Download model
 17. Now talk about the architecutre of inference endpoit 
 18. Then show - https://github.com/aws/sagemaker-containers
 19 watch -n1  ./predict_img_endpoint.py -e sm-e2e-chzar-endpoint - go to sagemaker terminal and execute this to check the status - see if you can do 3 
-
-
-Steps
-------
-
-1. 
 
 
 Links
