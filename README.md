@@ -9,7 +9,10 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 ### Part 1 - Setup notebook and train the model
 -----------
 
-1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. *Advanced Step* - You may have to stop the Cloud9 instance and resize the EBS volume as the default size is only 8 GB.
+1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. *Advanced Step* - You may have to stop the Cloud9 instance and resize the EBS volume as the default size is only 8 GB. This usecase would require us to increase the size of EC2 instance that is hosting our Cloud9 instance. For this please navigate to the AWS EC2 console, and find the EC2 instance that is hosting our Cloud9 instance.
+    1. Select the instance that has the name of our Cloud9 instance. 
+    2. Select the Root device and navigate to the volume thats attached to this disk
+    3. Once the EBS volume is selected we go to Actions and select Modify Volume and change the size to 32 GB and click Modify
 
 2. Copy the repo - `git clone https://github.com/C24IO/SM-E2E-CHZAR.git`
 
@@ -94,11 +97,24 @@ conda install -y boto3
 ### Part 2 - Create a model and deploy an endpoint
 -----------
 
+##### Let's take a look at how we would use a pretrained model and deploy an endpoint using that
 
-5. Swich over to the notebook - and walk through that - people can execute if they want to execure they can otherwise its just moving on to the model downloads 
-6. 
+1. Navigate to your Cloud9 instance and go into the terminal in that instance
 
-Download model 
+2. To create a SageMaker Model We would need to have a container to run inference code against our model artefacts. Towards that end, we have a preconfigured container image template in the github repo - SM-E2E-CHZAR/container. Please navigate to SM-E2E-CHZAR/container. and execute ```./build_and_push.sh sm-e2e-chzar-container ``` This step would take about 10 mins or so to complete. 
+3. Details about the engineering of this docker image are dealt with more details in this [sample notebook](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/advanced_functionality/scikit_bring_your_own/scikit_bring_your_own.ipynb) and a [published blog](https://aws.amazon.com/blogs/machine-learning/train-and-host-scikit-learn-models-in-amazon-sagemaker-by-building-a-scikit-docker-container/).
+4. If you note the steps that are used to create this endpoint - we use the [CPU version](https://github.com/fastai/fastai/blob/master/environment-cpu.yml) of files needed as compared to [GPU version](https://github.com/fastai/fastai/blob/master/environment.yml) that we used for training. 
+5. Once this step is complete, 
+
+
+
+
+# TODO
+
+2. Navigate into the cloned github repo - `SM-E2E-CHZAR/model`
+3. Here you can find a pretrained model - `model.tar.gz`
+4. Let's upload it to our S3 bucket we created earlier - ```aws s3 cp model.tar.gz s3://sagemaker-1191-us-east-1-111652037296/```
+5. 
 
 7. Switch over to Cloud 9 and walk through the code 
 8. Then deplpy the docker 
