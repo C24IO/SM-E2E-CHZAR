@@ -51,7 +51,7 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
 #### Optional - *Advanced Steps* - To train your own model (40+ mins)
 
-[Normal steps resume later in the workshop here](# Normal Workshop resumes)
+[Normal steps resume later in the workshop here](#Normal-Workshop-resumes)
 
 10. Edit the notebook cell to make this notebook your very own - 
 ```python
