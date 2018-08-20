@@ -4,8 +4,9 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 
 Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
-### Workshop 1 must be in US East (N. Virginia)	us-east-1
+## Workshop 1 must be in US East (N. Virginia)	us-east-1
 
+### Part 1 - Setup notebook and train the model
 -----------
 
 1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. *Advanced Step* - You may have to stop the Cloud9 instance and resize the EBS volume as the default size is only 8 GB.
@@ -85,10 +86,37 @@ source activate fastai
 conda install -y boto3
 ```
 
+13. Please go ahead from here and train the model, this notebook will also upload your model artefacts into S3 bucket you specified before.
+
 #### Normal Workshop resumes
 #normal-workshop-resumes
 
-#### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
+### Part 2 - Create a model and deploy an endpoint
+-----------
+
+
+5. Swich over to the notebook - and walk through that - people can execute if they want to execure they can otherwise its just moving on to the model downloads 
+6. 
+
+Download model 
+
+7. Switch over to Cloud 9 and walk through the code 
+8. Then deplpy the docker 
+9. Check docker at ECS 
+10. Copy over the URI
+11. Create the model configuration
+12. Create endpint configuration
+13. create endpoints 
+14. run inerences gainst personal
+15. run inferences against demo persons
+16. check the cloudwartch logs and metrics 
+17. Now talk about the architecutre of inference endpoit 
+18. Then show - https://github.com/aws/sagemaker-containers
+19 watch -n1  ./predict_img_endpoint.py -e sm-e2e-chzar-endpoint - go to sagemaker terminal and execute this to check the status - see if you can do 3 
+
+
+
+### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
 
 Please note the structure of our directory here - 
 
@@ -113,26 +141,6 @@ Please note the structure of our directory here -
 ```
 
 
-5. Swich over to the notebook - and walk through that - people can execute if they want to execure they can otherwise its just moving on to the model downloads 
-6. 
-
-Download model 
-
-7. Switch over to Cloud 9 and walk through the code 
-8. Then deplpy the docker 
-9. Check docker at ECS 
-10. Copy over the URI
-11. Create the model configuration
-12. Create endpint configuration
-13. create endpoints 
-14. run inerences gainst personal
-15. run inferences against demo persons
-16. check the cloudwartch logs and metrics 
-17. Now talk about the architecutre of inference endpoit 
-18. Then show - https://github.com/aws/sagemaker-containers
-19 watch -n1  ./predict_img_endpoint.py -e sm-e2e-chzar-endpoint - go to sagemaker terminal and execute this to check the status - see if you can do 3 
-
-
 Links
 ------
 * Building, Training and Deploying Custom Algorithms Such as Fast.ai with Amazon SageMaker
@@ -151,7 +159,6 @@ https://console.aws.amazon.com/sagemaker/home?region=us-east-1#/notebook-instanc
 https://www.youtube.com/watch?v=IPBSB1HLNLo
 
 * Model files
- 
  https://s3.amazonaws.com/sagemaker-e2e-try3.notebook.us-east-1.sagemaker.aws/models/lhr-summit-demo/model.tar.gz 
  + s3://sagemaker-e2e-try3.notebook.us-east-1.sagemaker.aws/models/lhr-summit-demo/model.tar.gz
 
