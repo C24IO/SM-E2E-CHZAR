@@ -39,6 +39,11 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 9. Now once the SageMaker instance has launched - Goto Dashboard->Notebook instances->`SME2E-<username>`->Actions->Open. You would see a Jupyter notebook - now navigate to over the right hand side of that notebook and open `New->Terminal`. You will be presented with a Web-based Linux terminal. 
     1. In terminal navigate to - `cd /home/ec2-user/SageMaker` 
     2. Copy the repo again - `git clone https://github.com/C24IO/SM-E2E-CHZAR.git`
+    3. We are going to get data for this notebook to work on - Go into the repo that we cloned `cd SM-E2E-CHZAR/`
+    4. `mkdir data`
+    5. `cd data`
+    6. `wget -cv http://files.fast.ai/data/dogscats.zip`
+    7. `unzip dogscats.zip` - now you have the data required to run this notebook in `SM-E2E-CHZAR/data/dogscats`
     3. Navigate back to the Jupyter notebook and descend into - `SM-E2E-CHZAR`
     4. Open the prebuilt notebook there - `build_train_custom_model.ipynb`
     5. This notebook contains bare-bones code for *Image classification with Convolutional Neural Networks* for the full notebook with comments, helpful code its hosted [here](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson1.ipynb).
@@ -46,7 +51,13 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
 #### Optional - *Advanced Steps* - Train your own model
 
-10. 
+10. Edit the notebook cell to make this notebook your very own - 
+```python
+bucket='sagemaker-chazarey-us-east-1'   # customize to the name of your S3 bucket
+model_file_name = 'sm-e2e-chzar-model'  # customize to the name of your model
+PATH='data/dogscats/'                   # customize to the relative location of your data folder
+key='models/'+model_file_name+'/model.tar.gz' # prefix of the S3 bucket of the model file
+```
  
 source activate fastai
 conda install -y boto3
