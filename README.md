@@ -22,9 +22,16 @@ Setup
 
 You can run the aws commands right in the Cloud9 Terminal
 
-4. Goto AWS SageMaker Console & Create an instance - Everything else should be left to default.  *Advanced Step* - Select Accelerated Computing Notebook instance type and do training in your own notebook. Instead of using a pre-trained model for our endpoint (coming later in the workshop).
+4. We will now prepare to install custom Conda Kernel base on FastAI Library. Goto AWS SageMaker Console & - please create a new LifeCycle Configuration. Goto "Lifecycle configurations" in the SageMaker Dashboard. And "Create configuration".
 
-5. 
+5. Now lets create an instance to use those Lifecycle configurations - Everything else should be left to default.  *Advanced Step* - Select Accelerated Computing Notebook instance type and do training in your own notebook. Instead of using a pre-trained model for our endpoint (coming later in the workshop).
+ 
+
+
+6. In Start notebook copy and paste script from - `SM-E2E-CHZAR/lcc-files/start.sh`
+
+7. In Create notebook copy and paste script from - `SM-E2E-CHZAR/lcc-files/create.sh`. *Advanced Step* - Try to play around with these scripts. 
+
 
 
 Lifecycle configurations - put them in 
