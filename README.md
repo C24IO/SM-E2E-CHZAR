@@ -13,6 +13,8 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
     1. Select the instance that has the name of our Cloud9 instance. 
     2. Select the Root device and navigate to the volume thats attached to this disk
     3. Once the EBS volume is selected we go to Actions and select Modify Volume and change the size to 32 GB and click Modify
+    4. Wait for the volume size to reflect the new size of 32GB, then reboot the EC2 instance. 
+    5. Go to the terminal of Cloud9 instance and see if the size is now 32GB.
 
 2. Copy the repo - `git clone https://github.com/C24IO/SM-E2E-CHZAR.git`
 
@@ -104,7 +106,15 @@ conda install -y boto3
 2. To create a SageMaker Model We would need to have a container to run inference code against our model artefacts. Towards that end, we have a preconfigured container image template in the github repo - SM-E2E-CHZAR/container. Please navigate to SM-E2E-CHZAR/container. and execute ```./build_and_push.sh sm-e2e-chzar-container ``` This step would take about 10 mins or so to complete. 
 3. Details about the engineering of this docker image are dealt with more details in this [sample notebook](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/advanced_functionality/scikit_bring_your_own/scikit_bring_your_own.ipynb) and a [published blog](https://aws.amazon.com/blogs/machine-learning/train-and-host-scikit-learn-models-in-amazon-sagemaker-by-building-a-scikit-docker-container/).
 4. If you note the steps that are used to create this endpoint - we use the [CPU version](https://github.com/fastai/fastai/blob/master/environment-cpu.yml) of files needed as compared to [GPU version](https://github.com/fastai/fastai/blob/master/environment.yml) that we used for training. 
-5. Once this step is complete, 
+5. Once this step is complete, you should navigate to AWS ECS console and checkout the container that we just pushed. Now copy the Repository URI which looks like this - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar-container`. We use this later in model creation. 
+6. Now we move on to Model Creation in SageMaker - 
+    1. Navigate to Dashboard->Inference->Models->Click `Create model`
+    2. Model name - `sm-2e2-chzar-model`
+    3. IAM role should be already populated - as it was created for your notebook instance before
+    4. Network - leave at the default setting
+    5. Primary container - Let's create the model serving endpoint container now
+    6. Location of inference code image - the URI from our previous container deployment - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar:latest`
+
 
 
 
