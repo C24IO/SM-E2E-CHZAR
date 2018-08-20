@@ -22,23 +22,24 @@ Setup
 
     You can run the aws commands right in the Cloud9 Terminal
 
-4. We will now prepare to install custom Conda Kernel base on FastAI Library. Goto AWS SageMaker Console & - please create a new LifeCycle Configuration. Goto "Lifecycle configurations" in the SageMaker Dashboard. And "Create configuration".
+4. We will now prepare to install custom Conda Kernel base on FastAI Library. Goto AWS SageMaker Console & - please create a new LifeCycle Configuration. Goto "Lifecycle configurations" in the SageMaker Dashboard. And "Create configuration". Name it something like `FastAI`
 
-5. Now lets create an instance to use those Lifecycle configurations - Everything else should be left to default.  *Advanced Step* - Select Accelerated Computing Notebook instance type and do training in your own notebook. Instead of using a pre-trained model for our endpoint (coming later in the workshop).
+5. In Start notebook copy and paste script from - `SM-E2E-CHZAR/lcc-files/start.sh`
+
+6. In Create notebook copy and paste script from - `SM-E2E-CHZAR/lcc-files/create.sh`. *Advanced Step* - Try to play around with these scripts. 
+
+7. Now lets create an instance to use those Lifecycle configurations -   
+    1. **Notebook instance name** - `SME2E-<username>`
+    2. **Notebook instance type** - `ml.m4.xlarge` - Any instance type would do, as we are not going to train the model in this notebook today. *Advanced Step* - Select Accelerated Computing Notebook instance type and do training in your own notebook. Instead of using a pre-trained model for our endpoint (coming later in the workshop)
+    3. **IAM role** - `Create a new role` - Please select `Any S3 bucket`. *Advanced Step* - You can edit this role from the IAM console later on
+    4. **VPC - optional** - No VPC
+    5. **Lifecycle configuration - optional** - `FastAI` - The one that you created earlier
+    6. **Encryption key - optional** - `No Custom Encryption`
+
+8. Now please wait while the instance launches. And get ready to clone the github repo into this SageMaker Instance. While that happens you can navigate to checkout the logs created from our Lifecycle configurations Dashboard->Notebook instances-><Your Notebook instance>
  
 
 
-6. In Start notebook copy and paste script from - `SM-E2E-CHZAR/lcc-files/start.sh`
-
-7. In Create notebook copy and paste script from - `SM-E2E-CHZAR/lcc-files/create.sh`. *Advanced Step* - Try to play around with these scripts. 
-
-
-
-Lifecycle configurations - put them in 
-
-4. Create SageMaker Notebook 
-
-Open terminal of Sagemaker
 
 
 git clone https://github.com/C24IO/SM-E2E-CHZAR.git
