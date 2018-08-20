@@ -69,7 +69,20 @@ cd /home/ec2-user/SageMaker/fastai
 source activate fastai
 conda install -y boto3
 ```
- 
+
+12. Lets make the fastai library local to this notebook so we can 
+```python
+import torch
+from fastai.imports import *
+```
+To fix this please do the following on the Jupyter notebook terminal - 
+```bash
+cd /home/ec2-user/SageMaker/SM-E2E-CHZAR
+cp -aprvf /home/ec2-user/SageMaker/fastai/fastai .
+source activate fastai
+conda install -y boto3
+```
+
 
 (fastai) sh-4.2$ pwd
 /home/ec2-user/SageMaker/SM-E2E-CHZAR
