@@ -4,11 +4,9 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 
 Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
-Workshop 1 must be in US East (N. Virginia)	us-east-1
-======
+### Workshop 1 must be in US East (N. Virginia)	us-east-1
 
-Setup
-------
+-----------
 
 1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. *Advanced Step* - You may have to stop the Cloud9 instance and resize the EBS volume as the default size is only 8 GB.
 
@@ -36,15 +34,20 @@ Setup
     5. **Lifecycle configuration - optional** - `FastAI` - The one that you created earlier
     6. **Encryption key - optional** - `No Custom Encryption`
 
-8. Now please wait while the instance launches. And get ready to clone the github repo into this SageMaker Instance. While that happens you can navigate to checkout the logs created from our Lifecycle configurations Dashboard->Notebook instances-><Your Notebook instance>
+8. Now please wait while the instance launches. And get ready to clone the github repo into this SageMaker Instance. *Advanced Step* - Enable logging in the Lifecycle configurations by editing the scripts to log to stdout
+
+9. Now once the SageMaker instance has launched - Goto Dashboard->Notebook instances->`SME2E-<username>`->Actions->Open. You would see a Jupyter notebook - now navigate to over the right hand side of that notebook and open `New->Terminal`. You will be presented with a Web-based Linux terminal. 
+    1. In terminal navigate to - `cd /home/ec2-user/SageMaker` 
+    2. Copy the repo again - `git clone https://github.com/C24IO/SM-E2E-CHZAR.git`
+    3. Navigate back to the Jupyter notebook and descend into - `SM-E2E-CHZAR`
+    4. Open the prebuilt notebook there - `build_train_custom_model.ipynb`
+    5. This notebook contains bare-bones code for *Image classification with Convolutional Neural Networks* for the full notebook with comments, helpful code its hosted [here](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson1.ipynb).
+    6. The lesson that you can follow to go in the details of this code to *RECOGNIZING CATS AND DOGS* is [here](http://course.fast.ai/lessons/lesson1.html)
+
+#### Optional - *Advanced Steps* - Train your own model
+
+10. 
  
-
-
-
-
-git clone https://github.com/C24IO/SM-E2E-CHZAR.git
-
-
 source activate fastai
 conda install -y boto3
 
