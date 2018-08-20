@@ -51,6 +51,8 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
 #### Optional - *Advanced Steps* - To train your own model (40+ mins)
 
+[Normal steps resume later in the workshop here](#resume-normal-workshop)
+
 10. Edit the notebook cell to make this notebook your very own - 
 ```python
 bucket='sagemaker-chazarey-us-east-1'   # customize to the name of your S3 bucket
@@ -83,7 +85,13 @@ source activate fastai
 conda install -y boto3
 ```
 
+#### Normal Workshop resumes #resume-normal-workshop
 
+#### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
+
+Please note the structure of our directory here - 
+
+```bash
 .
 └── dogscats
     ├── models
