@@ -49,7 +49,7 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
     5. This notebook contains bare-bones code for *Image classification with Convolutional Neural Networks* for the full notebook with comments, helpful code its hosted [here](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson1.ipynb).
     6. The lesson that you can follow to go in the details of this code to *RECOGNIZING CATS AND DOGS* is [here](http://course.fast.ai/lessons/lesson1.html)
 
-#### Optional - *Advanced Steps* - Train your own model
+#### Optional - *Advanced Steps* - To train your own model (40+ mins)
 
 10. Edit the notebook cell to make this notebook your very own - 
 ```python
@@ -58,9 +58,18 @@ model_file_name = 'sm-e2e-chzar-model'  # customize to the name of your model
 PATH='data/dogscats/'                   # customize to the relative location of your data folder
 key='models/'+model_file_name+'/model.tar.gz' # prefix of the S3 bucket of the model file
 ```
- 
+
+11. We might run into issues while importing boto3 library
+```python
+import boto3
+```
+To fix this please do the following on the Jupyter notebook terminal - 
+```bash
+cd /home/ec2-user/SageMaker/fastai
 source activate fastai
 conda install -y boto3
+```
+ 
 
 (fastai) sh-4.2$ pwd
 /home/ec2-user/SageMaker/SM-E2E-CHZAR
