@@ -120,12 +120,12 @@ conda install -y boto3
  
 6. Now we move on to Model Creation in SageMaker - 
     1. Navigate to Dashboard->Inference->Models->Click `Create model`
-    2. Model name - `sm-2e2-chzar-model`
-    3. IAM role should be already populated - as it was created for your notebook instance before
-    4. Network - leave at the default setting
-    5. Primary container - Let's create the model serving endpoint container now
-    6. Location of inference code image - the URI from our previous container deployment - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar:latest`
-    7. Location of model artifacts - optional - `s3://sagemaker-1191-us-east-1-111652037296/model.tar.gz`
+    2. *Model name* - `sm-2e2-chzar-model`
+    3. *IAM role* should be already populated - as it was created for your notebook instance before
+    4. *Network* - leave at the default setting
+    5. *Primary container* - Let's create the model serving endpoint container now
+    6. *Location of inference code image* - the URI from our previous container deployment - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar:latest`
+    7. *Location of model artifacts* - optional - `s3://sagemaker-1191-us-east-1-111652037296/model.tar.gz`
     8. Finish the process by clicking on `Create model`
 
 7. Now we at the step just before we deploy an endpoint - we create an endpoint configuration
