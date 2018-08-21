@@ -149,15 +149,8 @@ mkdir data
 cd data
 wget -cv http://files.fast.ai/data/dogscats.zip
 unzip dogscats.zip
-
-
-chzar:~/environment/SM-E2E-CHZAR (master) $ ./predict_img_endpoint.py -e sm-2e2-chzar-model-2-endpoint
-Traceback (most recent call last):
-  File "./predict_img_endpoint.py", line 9, in <module>
-    import boto3
-ImportError: No module named boto3
-
 ```
+We have our test images in - `/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1` location now. Please update this in `predict_img_endpoint.py`. Its in the `main()` procedure, we need to replace the current value from `default_base_dir = '/home/ec2-user/environment/data/dogscats/test1/'` to `default_base_dir = '/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1'` - This varies with how you have cloned the github repo.
 
 10. At the end - lets run inference against this endpoint and check our results
     1. Please navigate to your Cloud9 instance
