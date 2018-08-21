@@ -70,7 +70,7 @@ PATH='data/dogscats/'                   # customize to the relative location of 
 key='models/'+model_file_name+'/model.tar.gz' # prefix of the S3 bucket of the model file
 ```
 
-11. We might run into issues while importing boto3 library
+2. We might run into issues while importing boto3 library
 ```python
 import boto3
 ```
@@ -81,7 +81,7 @@ source activate fastai
 conda install -y boto3
 ```
 
-12. Lets make the fastai library local to this notebook so we can 
+3. Lets make the fastai library local to this notebook so we can 
 ```python
 import torch
 from fastai.imports import *
@@ -92,7 +92,7 @@ cd /home/ec2-user/SageMaker/SM-E2E-CHZAR
 cp -aprvf /home/ec2-user/SageMaker/fastai/fastai .
 ```
 
-13. Please go ahead from here and train the model, this notebook will also upload your model artifacts into S3 bucket you specified before.
+4. Please go ahead from here and train the model, this notebook will also upload your model artifacts into S3 bucket you specified before.
 
 ### Part 2 - Create a model and deploy an endpoint
 -----------
