@@ -95,7 +95,7 @@ cp -aprvf /home/ec2-user/SageMaker/fastai/fastai .
 ### Part 2 - Create a model and deploy an endpoint
 -----------
 
-##### Let's take a look at how we would use a pretrained model and deploy an endpoint using that
+#### Let's take a look at how we would use a pretrained model and deploy an endpoint using those artifacts
 
 1. Navigate to your Cloud9 instance and go into the terminal in that instance
 
