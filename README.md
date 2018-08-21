@@ -28,7 +28,7 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 
     You can run the aws commands right in the Cloud9 Terminal
 
-4. We will now prepare to install custom Conda Kernel base on FastAI Library. Goto AWS SageMaker Console & - please create a new LifeCycle Configuration. Goto "Lifecycle configurations" in the SageMaker Dashboard. And "Create configuration". Name it something like `FastAI`
+4. We will now prepare to install custom Conda Kernel base on FastAI Library. Goto AWS SageMaker Console & please create a new LifeCycle Configuration. Goto "Lifecycle configurations" in the SageMaker Dashboard. And "Create configuration". Name it something like `FastAI`
 
 5. In Start notebook copy and paste script from - `SM-E2E-CHZAR/lcc-files/start.sh`
 
@@ -62,7 +62,7 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 [If you are not going to train your model please go here](#part-2---create-a-model-and-deploy-an-endpoint)
 
 
-10. Edit the notebook cell to make this notebook your very own - 
+1. Edit the notebook cell to make this notebook your very own - 
 ```python
 bucket='sagemaker-chazarey-us-east-1'   # customize to the name of your S3 bucket
 model_file_name = 'sm-e2e-chzar-model'  # customize to the name of your model
