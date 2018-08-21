@@ -8,6 +8,8 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 
 ## Workshop must be done in US East (N. Virginia)	us-east-1
 
+## Heading
+
 ### Part 1 - Setup SageMaker Notebook and Cloud9 IDE
 -----------
 
@@ -101,7 +103,7 @@ cp -aprvf /home/ec2-user/SageMaker/fastai/fastai .
 
 1. Navigate to your Cloud9 instance and go into the terminal in that instance
 
-2. To create a SageMaker Model We would need to have a container to run inference code against our model artifacts. Towards that end, we have a preconfigured container image template in the github repo - SM-E2E-CHZAR/container. Please navigate to SM-E2E-CHZAR/container. and execute ```./build_and_push.sh sm-e2e-chzar-container ``` This step would take about 10 mins or so to complete. 
+2. To create a SageMaker Model We would need to have a container to run inference code against our model artifacts. Towards that end, we have a preconfigured container image template in the github repo - SM-E2E-CHZAR/container. Please navigate to SM-E2E-CHZAR/container. and execute ```./build_and_push.sh sm-e2e-chzar-container ``` This step would take about 10 mins or so to complete. **This step takes 15+ minutes to finish. Take break before**.
 
 3. Details about the engineering of this docker image are dealt with more details in this [sample notebook](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/advanced_functionality/scikit_bring_your_own/scikit_bring_your_own.ipynb) and a [published blog](https://aws.amazon.com/blogs/machine-learning/train-and-host-scikit-learn-models-in-amazon-sagemaker-by-building-a-scikit-docker-container/).
 
