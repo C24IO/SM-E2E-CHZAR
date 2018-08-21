@@ -4,7 +4,7 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 
 Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
-## Workshop 1 must be in US East (N. Virginia)	us-east-1
+## Workshop must be done in US East (N. Virginia)	us-east-1
 
 ### Part 1 - Setup notebook and train the model
 -----------
@@ -140,9 +140,9 @@ cp -aprvf /home/ec2-user/SageMaker/fastai/fastai .
 9. Now finally we have a deployed endpoint - named `sm-e2e-chzar-endpoint`. 
 
 
-10. Setup for running inference - Please execute this in your Cloud9 Terminal
-```bash
+10. We need this to get test images inplace to run inference against our deployed endpoint. Please execute this in your Cloud9 Terminal
 
+```bash
 sudo pip install boto3
 cd /home/ec2-user/environment/SM-E2E-CHZAR
 mkdir data
@@ -150,7 +150,7 @@ cd data
 wget -cv http://files.fast.ai/data/dogscats.zip
 unzip dogscats.zip
 ```
-We have our test images in - `/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1` location now. Please update this in `predict_img_endpoint.py`. Its in the `main()` procedure, we need to replace the current value from `default_base_dir = '/home/ec2-user/environment/data/dogscats/test1/'` to `default_base_dir = '/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1/'` - This varies with how you have cloned the github repo.
+>We have our test images in - `/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1` location now. Please update this in `predict_img_endpoint.py`. Its in the `main()` procedure, we need to replace the current value from `default_base_dir = '/home/ec2-user/environment/data/dogscats/test1/'` to `default_base_dir = '/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1/'` - This varies with how you have cloned the github repo.
 
 10. At the end - lets run inference against this endpoint and check our results
     1. Please navigate to your Cloud9 instance
