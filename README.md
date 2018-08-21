@@ -141,6 +141,19 @@ conda install -y boto3
 
 9. Now finally we have a deployed endpoint - named `sm-e2e-chzar-endpoint`. 
 
+
+10. Setup for running inference - 
+```bash
+
+chzar:~/environment/SM-E2E-CHZAR (master) $ ./predict_img_endpoint.py -e sm-2e2-chzar-model-2-endpoint
+Traceback (most recent call last):
+  File "./predict_img_endpoint.py", line 9, in <module>
+    import boto3
+ImportError: No module named boto3
+
+```
+
+
 10. At the end - lets run inference against this endpoint and check our results
     1. Please navigate to your Cloud9 instance
     2. Get to the place where we cloned our git repo in the beginning
