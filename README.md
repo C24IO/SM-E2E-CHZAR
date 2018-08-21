@@ -8,10 +8,10 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 
 ## Workshop must be done in US East (N. Virginia)	us-east-1
 
-### Part 1 - Setup notebook and train the model
+### Part 1 - Setup notebook and Cloud9 IDE
 -----------
 
-1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. *Advanced Step* - You may have to stop the Cloud9 instance and resize the EBS volume as the default size is only 8 GB. This usecase would require us to increase the size of EC2 instance that is hosting our Cloud9 instance. For this please navigate to the AWS EC2 console, and find the EC2 instance that is hosting our Cloud9 instance.
+1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. This usecase would require us to increase the size of EC2 instance that is hosting our Cloud9 instance. For this please navigate to the AWS EC2 console, and find the EC2 instance that is hosting our Cloud9 instance.
     1. Select the instance that has the name of our Cloud9 instance. 
     2. Select the Root device and navigate to the volume thats attached to this disk
     3. Once the EBS volume is selected we go to Actions and select Modify Volume and change the size to 32 GB and click Modify
