@@ -87,8 +87,6 @@ To fix this please do the following on the Jupyter notebook terminal -
 ```bash
 cd /home/ec2-user/SageMaker/SM-E2E-CHZAR
 cp -aprvf /home/ec2-user/SageMaker/fastai/fastai .
-source activate fastai
-conda install -y boto3
 ```
 
 13. Please go ahead from here and train the model, this notebook will also upload your model artifacts into S3 bucket you specified before.
@@ -170,9 +168,9 @@ ImportError: No module named boto3
 
 ### Optional - *Advanced Steps* - Model A/B testing     
     
-    5. *Advanced step* - we can all run inference against one endpoint in the class and see how the infrastructure performs.
-    6. *Advanced step* - we can use an inferior instance type to create the endpoint and see how the infrastructure treats failure and if we can create mechanism to handle that. 
-
+1. We can all run inference against one endpoint in the class and see how the infrastructure performs.
+2. We can use an inferior instance type to create the endpoint and see how the infrastructure treats failure and if we can create mechanism to handle that.
+3. [You can perform A/B testing here by creating multiple endpoints as detailed in this blog](https://medium.com/@julsimon/mastering-the-mystical-art-of-model-deployment-c0cafe011175). You can create diffrent version of the model by tuning the hyperparameters to diffrent values. 
 
 ### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
 
