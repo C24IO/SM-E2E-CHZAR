@@ -137,13 +137,19 @@ conda install -y boto3
     1. Goto Dashboard->Endpoints->Click on `Create endpoint`
     2. *Endpoint name* - `sm-e2e-chzar-endpoint`
     3. In *Endpoint configuration* - select the configuration that we created in the step above
-    4. By default we select `ml.m4.xlarge`. *Advanced Step* - [You can perform A/B testing here by creating multiple endpoints as detailed in this blog](https://medium.com/@julsimon/mastering-the-mystical-art-of-model-deployment-c0cafe011175). You can create diffrent version of the model by tuning the hyperparameters to diffrent values. 
+    4. By default we select `ml.m4.xlarge`, please note this is a non GPU instance, as we are performing inference only and not learning. 
 
 9. Now finally we have a deployed endpoint - named `sm-e2e-chzar-endpoint`. 
 
 
-10. Setup for running inference - 
+10. Setup for running inference - Please execute this in your Cloud9 Terminal
 ```bash
+
+sudo pip install boto3
+cd /home/ec2-user/environment/SM-E2E-CHZAR
+mkdir data
+cd data
+
 
 chzar:~/environment/SM-E2E-CHZAR (master) $ ./predict_img_endpoint.py -e sm-2e2-chzar-model-2-endpoint
 Traceback (most recent call last):
@@ -153,16 +159,19 @@ ImportError: No module named boto3
 
 ```
 
-
 10. At the end - lets run inference against this endpoint and check our results
     1. Please navigate to your Cloud9 instance
     2. Get to the place where we cloned our git repo in the beginning
     3. There you would find a file - `predict_img_endpoint.py` - we will use this to run inference against our deployed endpoint. 
     4. Please execute this command to run an inference per second against the endpoint - `watch -n1 ./predict_img_endpoint.py -e sm-e2e-chzar-endpoint`
+    5. Finally - lets go to the Endpoint and open `View invocation metrics` `View instance metrics` & `View logs` in three diffrent tabs. 
+    8. Please observe the diffrent metrics and see how the deployed endpoint reacts to variable loads.
+
+
+### Optional - *Advanced Steps* - Model A/B testing     
+    
     5. *Advanced step* - we can all run inference against one endpoint in the class and see how the infrastructure performs.
     6. *Advanced step* - we can use an inferior instance type to create the endpoint and see how the infrastructure treats failure and if we can create mechanism to handle that. 
-    7. Finally - lets go to the Endpoint and open `View invocation metrics` `View instance metrics` & `View logs` in three diffrent tabs. 
-    8. Please observe the diffrent metrics and see how the deployed endpoint reacts to variable loads.
 
 
 ### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
