@@ -92,9 +92,6 @@ cp -aprvf /home/ec2-user/SageMaker/fastai/fastai .
 
 13. Please go ahead from here and train the model, this notebook will also upload your model artifacts into S3 bucket you specified before.
 
-#### Normal Workshop resumes
-#normal-workshop-resumes
-
 ### Part 2 - Create a model and deploy an endpoint
 -----------
 
