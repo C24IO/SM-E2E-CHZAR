@@ -150,7 +150,7 @@ cd data
 wget -cv http://files.fast.ai/data/dogscats.zip
 unzip dogscats.zip
 ```
-We have our test images in - `/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1` location now. Please update this in `predict_img_endpoint.py`. Its in the `main()` procedure, we need to replace the current value from `default_base_dir = '/home/ec2-user/environment/data/dogscats/test1/'` to `default_base_dir = '/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1'` - This varies with how you have cloned the github repo.
+We have our test images in - `/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1` location now. Please update this in `predict_img_endpoint.py`. Its in the `main()` procedure, we need to replace the current value from `default_base_dir = '/home/ec2-user/environment/data/dogscats/test1/'` to `default_base_dir = '/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1/'` - This varies with how you have cloned the github repo.
 
 10. At the end - lets run inference against this endpoint and check our results
     1. Please navigate to your Cloud9 instance
