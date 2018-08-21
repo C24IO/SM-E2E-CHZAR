@@ -214,4 +214,7 @@ https://www.youtube.com/watch?v=IPBSB1HLNLo
 * Model files
  https://s3.amazonaws.com/sagemaker-e2e-try3.notebook.us-east-1.sagemaker.aws/models/lhr-summit-demo/model.tar.gz 
  + s3://sagemaker-e2e-try3.notebook.us-east-1.sagemaker.aws/models/lhr-summit-demo/model.tar.gz
- + 
+ +
+
+* [Training Imagenet in 3 hours for $25; and CIFAR10 for $0.26](http://www.fast.ai/2018/04/30/dawnbench-fastai/)
+* [Now anyone can train Imagenet in 18 minutes](http://www.fast.ai/2018/08/10/fastai-diu-imagenet/)
