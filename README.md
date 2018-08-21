@@ -133,9 +133,13 @@ conda install -y boto3
     2. Click on *Add model* & add the model that we created in the previous step
     3. Click on `Create endpoint configuration`
 
-8.  
+8. Finally - the last step before our endpoint is in production - 
+    1. Goto Dashboard->Endpoints->Click on `Create endpoint`
+    2. *Endpoint name* - `sm-e2e-chzar-endpoint`
+    3. In *Endpoint configuration* - select the configuration that we created in the step above
+    4. By default we select `ml.m4.xlarge`. *Advanced Step* - [You can perform A/B testing here by creating multiple endpoints as detailed in this blog](https://medium.com/@julsimon/mastering-the-mystical-art-of-model-deployment-c0cafe011175). You can create diffrent version of the model by tuning the hyperparameters to diffrent values. 
 
-
+9. Now finally we have a deployed endpoint - named `sm-e2e-chzar-endpoint`. 
 
 
 
