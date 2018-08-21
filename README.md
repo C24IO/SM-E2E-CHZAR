@@ -2,9 +2,9 @@
 # Introduction
 This repository contains the source code, Jupyter notebooks, configuration etc. for an End-2-End Model training to deployment SageMaker demo
 
-[Base Repository](https://github.com/mattmcclean/sagemaker-lhr-summit-demo)
+[Base Repository by Matthew McClean](https://github.com/mattmcclean/sagemaker-lhr-summit-demo)
 
-[Presentation on YouTube](https://youtu.be/1kJf0Lvzj8A)
+[Presentation on YouTube by Matthew McClean](https://youtu.be/1kJf0Lvzj8A)
 
 ## Workshop must be done in US East (N. Virginia)	us-east-1
 
