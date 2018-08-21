@@ -57,7 +57,7 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
 #### Optional - *Advanced Steps* - To train your own model (40+ mins)
 
-[Normal steps resume later in the workshop here](#part-2---create-a-model-and-deploy-an-endpoint)
+[If you are not going to train your model please go here](#part-2---create-a-model-and-deploy-an-endpoint)
 
 
 10. Edit the notebook cell to make this notebook your very own - 
