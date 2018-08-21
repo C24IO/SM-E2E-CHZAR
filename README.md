@@ -147,6 +147,7 @@ sudo pip install boto3
 cd /home/ec2-user/environment/SM-E2E-CHZAR
 mkdir data
 cd data
+wget -cv http://files.fast.ai/data/dogscats.zip
 unzip dogscats.zip
 
 
@@ -198,7 +199,7 @@ Please note the structure of our directory here -
 ```
 
 
-You can adapt this structure, change names of directories and use this same notebook and the same model to [create a world class image classifier for *any* types of images](https://medium.com/@apiltamang/case-study-a-world-class-image-classifier-for-dogs-and-cats-err-anything-9cf39ee4690e). 
+You can adapt this structure, change names of directories and use this same notebook and the same model to [create a world class image classifier for *any* type of images](https://medium.com/@apiltamang/case-study-a-world-class-image-classifier-for-dogs-and-cats-err-anything-9cf39ee4690e). 
 
 Links
 ------
