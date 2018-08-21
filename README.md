@@ -18,7 +18,7 @@ Source: https://github.com/mattmcclean/sagemaker-lhr-summit-demo
 
 2. Copy the repo - `git clone https://github.com/C24IO/SM-E2E-CHZAR.git`
 
-3. Goto AWS S3 Console & create an S3 bucket for the model artefacts. The S3 bucket should be named: ```sagemaker-<region_name>-<account_id>``` where *<region_name>* is the AWS region where the demo is being run and *<account_id>* is the AWS Account ID. Please create this in ```US East (N. Virginia)	us-east-1```. This step is really important for the workshop to work properly.
+3. Goto AWS S3 Console & create an S3 bucket for the model artifacts. The S3 bucket should be named: ```sagemaker-<region_name>-<account_id>``` where *<region_name>* is the AWS region where the demo is being run and *<account_id>* is the AWS Account ID. Please create this in ```US East (N. Virginia)	us-east-1```. This step is really important for the workshop to work properly.
 
     If you need to create the S3 bucket do so with this AWS CLI command:
 
@@ -91,7 +91,7 @@ source activate fastai
 conda install -y boto3
 ```
 
-13. Please go ahead from here and train the model, this notebook will also upload your model artefacts into S3 bucket you specified before.
+13. Please go ahead from here and train the model, this notebook will also upload your model artifacts into S3 bucket you specified before.
 
 #### Normal Workshop resumes
 #normal-workshop-resumes
@@ -103,10 +103,14 @@ conda install -y boto3
 
 1. Navigate to your Cloud9 instance and go into the terminal in that instance
 
-2. To create a SageMaker Model We would need to have a container to run inference code against our model artefacts. Towards that end, we have a preconfigured container image template in the github repo - SM-E2E-CHZAR/container. Please navigate to SM-E2E-CHZAR/container. and execute ```./build_and_push.sh sm-e2e-chzar-container ``` This step would take about 10 mins or so to complete. 
+2. To create a SageMaker Model We would need to have a container to run inference code against our model artifacts. Towards that end, we have a preconfigured container image template in the github repo - SM-E2E-CHZAR/container. Please navigate to SM-E2E-CHZAR/container. and execute ```./build_and_push.sh sm-e2e-chzar-container ``` This step would take about 10 mins or so to complete. 
+
 3. Details about the engineering of this docker image are dealt with more details in this [sample notebook](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/advanced_functionality/scikit_bring_your_own/scikit_bring_your_own.ipynb) and a [published blog](https://aws.amazon.com/blogs/machine-learning/train-and-host-scikit-learn-models-in-amazon-sagemaker-by-building-a-scikit-docker-container/).
+
 4. If you note the steps that are used to create this endpoint - we use the [CPU version](https://github.com/fastai/fastai/blob/master/environment-cpu.yml) of files needed as compared to [GPU version](https://github.com/fastai/fastai/blob/master/environment.yml) that we used for training. 
+
 5. Once this step is complete, you should navigate to AWS ECS console and checkout the container that we just pushed. Now copy the Repository URI which looks like this - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar-container`. We use this later in model creation.
+
 6. Before we move on to the actual SageMaker model creation, lets upload our model artifacts into S3. Do this on your Cloud9 Terminal
 
     1. Navigate into the cloned github repo - `SM-E2E-CHZAR/model` 
@@ -125,7 +129,12 @@ conda install -y boto3
     8. Finish the process by clicking on `Create model`
 
 7. Now we at the step just before we deploy an endpoint - we create an endpoint configuration
-    1. 
+    1. Only 2 things needed to be filled in here - *Endpoint configuration name* - `sm-e2e-chzar-endpoint-config`
+    2. Click on *Add model* & add the model that we created in the previous step
+    3. Click on `Create endpoint configuration`
+
+8.  
+
 
 
 
