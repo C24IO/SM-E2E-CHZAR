@@ -111,7 +111,8 @@ conda install -y boto3
 
     1. Navigate into the cloned github repo - `SM-E2E-CHZAR/model` 
     2. Here you can find a pretrained model - `model.tar.gz` 
-    3. Let's upload it to our S3 bucket we created earlier - ```aws s3 cp model.tar.gz  s3://sagemaker-1191-us-east-1-111652037296/```
+    3. Let's upload it to our S3 bucket we created earlier - `aws s3 cp model.tar.gz  s3://sagemaker-1191-us-east-1-111652037296/`
+    4. Here is the location for our model artifacts now - `s3://sagemaker-1191-us-east-1-111652037296/model.tar.gz`
  
 6. Now we move on to Model Creation in SageMaker - 
     1. Navigate to Dashboard->Inference->Models->Click `Create model`
@@ -120,6 +121,11 @@ conda install -y boto3
     4. Network - leave at the default setting
     5. Primary container - Let's create the model serving endpoint container now
     6. Location of inference code image - the URI from our previous container deployment - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar:latest`
+    7. Location of model artifacts - optional - `s3://sagemaker-1191-us-east-1-111652037296/model.tar.gz`
+    8. Finish the process by clicking on `Create model`
+
+7. Now we at the step just before we deploy an endpoint - we create an endpoint configuration
+    1. 
 
 
 
@@ -128,13 +134,6 @@ conda install -y boto3
 # TODO
 
 
-5. 
-
-7. Switch over to Cloud 9 and walk through the code 
-8. Then deplpy the docker 
-9. Check docker at ECS 
-10. Copy over the URI
-11. Create the model configuration
 12. Create endpint configuration
 13. create endpoints 
 14. run inerences gainst personal
