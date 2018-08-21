@@ -106,7 +106,13 @@ conda install -y boto3
 2. To create a SageMaker Model We would need to have a container to run inference code against our model artefacts. Towards that end, we have a preconfigured container image template in the github repo - SM-E2E-CHZAR/container. Please navigate to SM-E2E-CHZAR/container. and execute ```./build_and_push.sh sm-e2e-chzar-container ``` This step would take about 10 mins or so to complete. 
 3. Details about the engineering of this docker image are dealt with more details in this [sample notebook](https://github.com/awslabs/amazon-sagemaker-examples/blob/master/advanced_functionality/scikit_bring_your_own/scikit_bring_your_own.ipynb) and a [published blog](https://aws.amazon.com/blogs/machine-learning/train-and-host-scikit-learn-models-in-amazon-sagemaker-by-building-a-scikit-docker-container/).
 4. If you note the steps that are used to create this endpoint - we use the [CPU version](https://github.com/fastai/fastai/blob/master/environment-cpu.yml) of files needed as compared to [GPU version](https://github.com/fastai/fastai/blob/master/environment.yml) that we used for training. 
-5. Once this step is complete, you should navigate to AWS ECS console and checkout the container that we just pushed. Now copy the Repository URI which looks like this - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar-container`. We use this later in model creation. 
+5. Once this step is complete, you should navigate to AWS ECS console and checkout the container that we just pushed. Now copy the Repository URI which looks like this - `111652037296.dkr.ecr.us-east-1.amazonaws.com/sm-e2e-chzar-container`. We use this later in model creation.
+6. Before we move on to the actual SageMaker model creation, lets upload our model artifacts into S3. Do this on your Cloud9 Terminal
+
+    1. Navigate into the cloned github repo - `SM-E2E-CHZAR/model` 
+    2. Here you can find a pretrained model - `model.tar.gz` 
+    3. Let's upload it to our S3 bucket we created earlier - ```aws s3 cp model.tar.gz  s3://sagemaker-1191-us-east-1-111652037296/```
+ 
 6. Now we move on to Model Creation in SageMaker - 
     1. Navigate to Dashboard->Inference->Models->Click `Create model`
     2. Model name - `sm-2e2-chzar-model`
@@ -121,9 +127,7 @@ conda install -y boto3
 
 # TODO
 
-2. Navigate into the cloned github repo - `SM-E2E-CHZAR/model`
-3. Here you can find a pretrained model - `model.tar.gz`
-4. Let's upload it to our S3 bucket we created earlier - ```aws s3 cp model.tar.gz s3://sagemaker-1191-us-east-1-111652037296/```
+
 5. 
 
 7. Switch over to Cloud 9 and walk through the code 
