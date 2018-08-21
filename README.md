@@ -218,3 +218,4 @@ https://www.youtube.com/watch?v=IPBSB1HLNLo
 
 * [Training Imagenet in 3 hours for $25; and CIFAR10 for $0.26](http://www.fast.ai/2018/04/30/dawnbench-fastai/)
 * [Now anyone can train Imagenet in 18 minutes](http://www.fast.ai/2018/08/10/fastai-diu-imagenet/)
+* [Model Server for Apache MXNet is a tool for serving neural net models for inference](https://github.com/awslabs/mxnet-model-server)
