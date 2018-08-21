@@ -141,21 +141,15 @@ conda install -y boto3
 
 9. Now finally we have a deployed endpoint - named `sm-e2e-chzar-endpoint`. 
 
-
-
-
-# TODO
-
-
-12. Create endpint configuration
-13. create endpoints 
-14. run inerences gainst personal
-15. run inferences against demo persons
-16. check the cloudwartch logs and metrics 
-17. Now talk about the architecutre of inference endpoit 
-18. Then show - https://github.com/aws/sagemaker-containers
-19 watch -n1  ./predict_img_endpoint.py -e sm-e2e-chzar-endpoint - go to sagemaker terminal and execute this to check the status - see if you can do 3 
-
+10. At the end - lets run inference against this endpoint and check our results
+    1. Please navigate to your Cloud9 instance
+    2. Get to the place where we cloned our git repo in the beginning
+    3. There you would find a file - `predict_img_endpoint.py` - we will use this to run inference against our deployed endpoint. 
+    4. Please execute this command to run an inference per second against the endpoint - `watch -n1 ./predict_img_endpoint.py -e sm-e2e-chzar-endpoint`
+    5. *Advanced step* - we can all run inference against one endpoint in the class and see how the infrastructure performs.
+    6. *Advanced step* - we can use an inferior instance type to create the endpoint and see how the infrastructure treats failure and if we can create mechanism to handle that. 
+    7. Finally - lets go to the Endpoint and open `View invocation metrics` `View instance metrics` & `View logs` in three diffrent tabs. 
+    8. Please observe the diffrent metrics and see how the deployed endpoint reacts to variable loads.
 
 
 ### Optional - *Advanced Steps* - Extend notebook to adapt to diffrent images
@@ -173,7 +167,7 @@ Please note the structure of our directory here -
     │   └── valid
     │       ├── cats
     │       └── dogs
-    ├── test1
+    ├── test1a
     ├── train
     │   ├── cats
     │   └── dogs
@@ -182,6 +176,8 @@ Please note the structure of our directory here -
         └── dogs
 ```
 
+
+You can adapt this structure, change names of directories and use this same notebook and the same model to [create a world class image classifier for *any* types of images](https://medium.com/@apiltamang/case-study-a-world-class-image-classifier-for-dogs-and-cats-err-anything-9cf39ee4690e). 
 
 Links
 ------
@@ -203,7 +199,4 @@ https://www.youtube.com/watch?v=IPBSB1HLNLo
 * Model files
  https://s3.amazonaws.com/sagemaker-e2e-try3.notebook.us-east-1.sagemaker.aws/models/lhr-summit-demo/model.tar.gz 
  + s3://sagemaker-e2e-try3.notebook.us-east-1.sagemaker.aws/models/lhr-summit-demo/model.tar.gz
-
-
-
-
+ + 
