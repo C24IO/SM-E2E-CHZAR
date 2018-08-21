@@ -8,7 +8,7 @@ This repository contains the source code, Jupyter notebooks, configuration etc. 
 
 ## Workshop must be done in US East (N. Virginia)	us-east-1
 
-### Part 1 - Setup notebook and Cloud9 IDE
+### Part 1 - Setup SageMaker Notebook and Cloud9 IDE
 -----------
 
 1. Launch a new Cloud9 instance. Make sure you have enough space on the EBS volume. This usecase would require us to increase the size of EC2 instance that is hosting our Cloud9 instance. For this please navigate to the AWS EC2 console, and find the EC2 instance that is hosting our Cloud9 instance.
