@@ -147,6 +147,7 @@ sudo pip install boto3
 cd /home/ec2-user/environment/SM-E2E-CHZAR
 mkdir data
 cd data
+unzip dogscats.zip
 
 
 chzar:~/environment/SM-E2E-CHZAR (master) $ ./predict_img_endpoint.py -e sm-2e2-chzar-model-2-endpoint
