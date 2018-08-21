@@ -41,7 +41,7 @@ def main():
     endpoint = None
     image_file = None
     verbose = False
-    default_base_dir = '/home/ec2-user/efs/C/Chzar-WorkShops/SM-E2E-CHZAR-data/dogscats/test1/'
+    default_base_dir = '/home/ec2-user/environment/SM-E2E-CHZAR/data/dogscats/test1/'
     for o, a in opts:
         if o == "-v":
             verbose = True
